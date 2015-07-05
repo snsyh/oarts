@@ -1,0 +1,6 @@
+var prev = $('#art_list').html();
+$('#art_list').html(prev
++ '<%= escape_javascript render(@arts) %>');
+$('#next').html(
+  '<%= escape_javascript(link_to_next_page(@arts, 'Next', :remote => true, :id => "next_link", params: params).to_s) %>'
+);

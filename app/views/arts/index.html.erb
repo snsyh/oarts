@@ -1,0 +1,55 @@
+<%= form_tag('/list', :method => :get) do %>
+<div class="sidemenu">
+	<div class="condbox">
+		<div class="cond-title">
+			開催月から選ぶ
+		</div>
+		<%= hidden_field_tag 'y', @condYear, {:class => "y"} %>
+		<ul class="cond-block">
+			<li>
+				<%= link_to_unless @condYear=='all', 'すべて', "#", :name => "cy", :class => "search_cond", :value => "all", :onclick => "return false;" %>
+			</li>
+			<% for year in 2014..2015 do %>
+			<li>
+				<%= link_to_unless @condYear==year.to_s, year, "#", :name => "cy", :class => "search_cond", :value => "#{year}", :onclick => "return false;" %>
+			</li>
+			<% end %>
+		</ul>
+		<ul class="cond-block">
+			<% @listMonth.each do |month| %>
+			<li>
+				<%= check_box_tag 'm', month.event_month, @condMonth.include?(month.event_month) ? true: false, {:id=>"m_#{month.event_month}", :class => "m search_cond"} %><%= month.event_month %>月
+			</li>
+			<% end %>
+		</ul>
+		<div class="both"></div>
+	</div>
+	
+	<% if @listDay.length > 0 %>
+	<div class="condbox">
+		<div class="cond-title">
+			開催日を選ぶ
+		</div>
+		<ul class="cond-main">
+			<% @listDay.each do |day| %>
+			<li>
+				<%= check_box_tag 'd', day.event_day, @condDay.include?(day.event_day) ? true: false, {:id=>"d_#{day.event_day}", :class => "d search_cond"} %><%= day.event_day %>日
+			</li>
+			<% end %>
+		</ul>
+	</div>
+	<% end %>
+</div>
+<div class="contents_spacing"></div>
+<div class="contents">
+	<H1>おひるねアートの検索結果</H1>
+	<div id="art_list">
+		<%= render @arts %>
+	</div>
+	<div id="next">
+		<%= link_to_next_page(@arts, '', :remote => true, :id => 'next_link', params: params)  %>
+	</div>
+</div>
+<% end %>
+<div class="both"></div>
+

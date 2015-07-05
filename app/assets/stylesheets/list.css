@@ -1,0 +1,109 @@
+@charset "utf-8";
+.header {
+	height: 35px;
+	display: table;
+	width: 100%;
+	min-width: 350px;
+	background: -moz-linear-gradient(#FFFFFF, #EFEFEF);
+	background: -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), to(#EFEFEF));
+	padding-bottom: 3px;
+	border-bottom: 1px solid #DCDCDC;
+}
+.header .navi li {
+	display: inline;
+	margin-left: 10px;
+}
+.header .logo {
+	display: table-cell;
+	width: 103px;
+	height: 26px;
+	vertical-align: bottom;
+}
+.header .logo a {
+	display: block;
+	margin-left: 10px;
+	height: 26px;
+}
+
+.header .navi {
+	display: table-cell;
+	vertical-align: bottom;
+	text-align: right;
+	padding-right: 5px;
+}
+.footer {
+	height: 60px;
+	background: -moz-linear-gradient(#EFEFEF, #FFFFFF);
+	background: -webkit-gradient(linear, left top, left bottom, from(#EFEFEF), to(#FFFFFF));
+}
+.ib-box {
+	display: inline-block;
+	width: 300px;
+	height: 200px;
+	margin: 20px 25px 15px 0;
+	border: 1px solid #DCDCDC;
+	box-shadow: 1px 1px 2px #000;
+}
+
+.sidemenu {
+	display: table-cell;
+	max-width: 170px;
+	min-width: 170px;
+}
+
+.contents {
+	max-width: 1024px;
+	display: table-cell;
+}
+
+.contents_spacing {
+	display: table-cell;
+	width: 20px;
+}
+
+.container {
+	margin: 35px 15px 20px 0;
+	width: 100%;
+	display: table;
+	border-collapse: separate; /* セルの間隔を空ける */
+	border-spacing: 5px 0; /* 左右 上下で記述 */
+}
+
+.container H1 {
+	font-weight: bold;
+	font-size: 1.3em;
+	border: 1px solid #CCCCCC;
+	padding: 10px 0 10px 5px;
+	background: -moz-linear-gradient(#FEFEFE, #EEEEEE);
+	background: -webkit-gradient(linear, left top, left bottom, from(#FEFEFE), to(#EEEEEE));
+	min-width: 300px;
+}
+
+.condbox {
+	border: 1px solid #DCDCDC;
+	border-radius: 10px;
+	margin-bottom: 15px;
+	margin-left: 10px;
+	background: #EFEFEF;
+}
+
+.cond-title {
+	border-bottom: 1px solid #CCCCCC;
+	box-shadow: 0 1px 1px #FFFFFF;
+	padding: 10px 0 2px 10px;
+	font-size: 0.8em;
+	font-weight: bold;
+	letter-spacing: 0.1em;
+}
+
+.cond-main {
+	margin: 10px;
+	font-size: 0.9em;
+}
+
+.cond-block {
+	margin: 10px;
+	font-size: 0.9em;
+	float: left;
+}
+
